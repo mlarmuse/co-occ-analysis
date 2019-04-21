@@ -3,9 +3,12 @@ import numpy as np
 from OmicsData import ContinuousOmicsDataSet, DiscreteOmicsDataSet
 from sklearn.preprocessing import StandardScaler
 
-DATA_PATH = '/home/bioinformatics/mlarmuse/Documents/CAMDA_challenge/data_metabric/'
-SAVE_PATH ='/home/bioinformatics/mlarmuse/Documents/CAMDA_challenge/Paper/Second_Submission/'
-DATA_PATH_TCGA = '/home/bioinformatics/mlarmuse/PycharmProjects/PathwaysGDC/'
+
+DATA_PATH = <path to metabric data>
+DATA_PATH_TCGA = <path to TCGA transcriptome data>
+SAVE_PATH = <path to save results>
+genomic_datapath_TCGA = <path to genomic TCGA data>
+DATAPATH = <path to network>
 
 gx_df = pd.read_csv(DATA_PATH + 'data_expression.txt', sep='\t', index_col=0)
 gx_df = gx_df.drop(['Entrez_Gene_Id'], axis=1)
