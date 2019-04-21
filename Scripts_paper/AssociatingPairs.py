@@ -2,11 +2,11 @@ import pandas as pd
 import numpy as np
 from OmicsData import DiscreteOmicsDataSet
 
-DATA_PATH = '/home/bioinformatics/mlarmuse/Documents/CAMDA_challenge/data_metabric/'
-DATA_PATH_TCGA = '/home/bioinformatics/mlarmuse/PycharmProjects/PathwaysGDC/'
-SAVE_PATH ='/home/bioinformatics/mlarmuse/Documents/CAMDA_challenge/Paper/Second_Submission/'
-genomic_datapath_TCGA = '/home/bioinformatics/mlarmuse/Documents/GDCdata/'
-DATAPATH = '/home/bioinformatics/mlarmuse/Documents/CAMDA_challenge/Paper/Second_Submission/'
+DATA_PATH = <path to metabric data>
+DATA_PATH_TCGA = <path to TCGA transcriptome data>
+SAVE_PATH = <path to save results>
+genomic_datapath_TCGA = <path to genomic TCGA data>
+DATAPATH = <path to network>
 
 # Read in the data
 n_reg = '2'
@@ -28,7 +28,7 @@ mut_data_TCGA = pd.read_csv(genomic_datapath_TCGA + 'ProcessedFiles/MuTect2/mut_
                             index_col=0, header=0)
 mut_data_TCGA = DiscreteOmicsDataSet(mut_data_TCGA)
 
-mapid_dfs = pd.read_csv('/home/bioinformatics/mlarmuse/Documents/CAMDA_challenge/DataTCGA/ENSG2name.txt',
+mapid_dfs = pd.read_csv(<path to id mapper file>,
                         sep='\t', header=0, index_col=0)[['Gene name']]
 mapper_dict = dict(zip(list(mapid_dfs.index), mapid_dfs['Gene name']))
 mut_data_TCGA.changeGeneIDs(mapper_dict, with_loss=True)
