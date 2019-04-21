@@ -3,10 +3,11 @@ import numpy as np
 from OmicsData import ContinuousOmicsDataSet, DiscreteOmicsDataSet
 import matplotlib.pyplot as plt
 
-DATA_PATH = '/home/bioinformatics/mlarmuse/Documents/CAMDA_challenge/data_metabric/'
-DATA_PATH_TCGA = '/home/bioinformatics/mlarmuse/PycharmProjects/PathwaysGDC/'
-SAVE_PATH ='/home/bioinformatics/mlarmuse/Documents/CAMDA_challenge/Paper/Second_Submission/'
-genomic_datapath_TCGA = '/home/bioinformatics/mlarmuse/Documents/GDCdata/'
+DATA_PATH = <path to metabric data>
+DATA_PATH_TCGA = <path to TCGA transcriptome data>
+SAVE_PATH = <path to save results>
+genomic_datapath_TCGA = <path to genomic TCGA data>
+DATAPATH = <path to network>
 
 # Read in the data
 n_reg = '2'
