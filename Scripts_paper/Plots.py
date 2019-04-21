@@ -5,17 +5,20 @@ from sklearn.metrics import accuracy_score
 from OmicsData import ContinuousOmicsDataSet
 from OmicsData import DiscreteOmicsDataSet
 
-DATAPATH = '/home/bioinformatics/mlarmuse/Documents/CAMDA_challenge/Paper/Second_Submission/'
-SAVEPATH = '/home/bioinformatics/mlarmuse/Documents/CAMDA_challenge/Paper/Second_Submission/Figures/'
+DATAPATH = <path where intermediate results are saved >
+SAVEPATH = <path to save figures>
+DATA_PATH = <path to processed metabric expression data>
+DATA_PATH_TCGA = <path to processed TCGA transcriptome data>
+
 
 
 # Plotting the Expression regimes for ERBB2
 gene = 'ERBB2'
-gx_META = pd.read_csv('/home/bioinformatics/mlarmuse/Documents/CAMDA_challenge/data_metabric/data_expression.txt',
+gx_META = pd.read_csv(DATA_PATH +'/data_expression.txt',
                     sep='\t', index_col=0)
 gx_META = gx_META.drop(['Entrez_Gene_Id'], axis=1)
 
-gx_TCGA = pd.read_csv('/home/bioinformatics/mlarmuse/PycharmProjects/PathwaysGDC/Expression_data_proc.csv',
+gx_TCGA = pd.read_csv(DATA_PATH_TCGA + '/Expression_data_proc.csv',
                       header=0, index_col=0)
 gx_TCGA = ContinuousOmicsDataSet(gx_TCGA)
 gx_META = ContinuousOmicsDataSet(gx_META)
